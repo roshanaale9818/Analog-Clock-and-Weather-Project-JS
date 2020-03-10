@@ -1,0 +1,350 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.site-wrapper {
+    background: #f84935;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.inner-wrapper {
+    margin: 50px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 40px;
+    display: flex;
+}
+
+.clock-wrapper {
+    margin: 0 auto;
+    width: 40%;
+    border-right: 2px solid #dddddd;
+}
+
+.clock-main {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+    background: #262c33;
+    border: 14px solid #ffffff;
+}
+
+.clock-main::before,
+.clock-main::after,
+.clock-main .hour-markers {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    background: #d4d5d6;
+    z-index: 0;
+    left: 50%;
+    margin-left: -5px;
+    top: 0
+}
+
+.clock-main::after {
+    transform: rotate(-90deg);
+}
+
+.clock-main .hour-markers {
+    background: #d4d5d6;
+    width: 8px;
+    margin-left: -4px
+}
+
+.clock-inner {
+    height: 275px;
+    border-radius: 250px;
+    width: 275px;
+    margin: 0;
+    border: 14px solid #d2d8df;
+}
+
+.hour-markers.oneseven {
+    transform: rotate(30deg)
+}
+
+.hour-markers.twoeight {
+    transform: rotate(60deg)
+}
+
+.hour-markers.fourten {
+    transform: rotate(120deg);
+}
+
+.hour-markers.fiveeleven {
+    transform: rotate(150deg)
+}
+
+.today {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Montserrat,regular';
+    z-index: -2222;
+    right: 21px;
+    position: absolute;
+    background: white;
+    padding: 5px 11px 5px 11px;
+    top: 42%;
+}
+
+.inner-clock {
+    position: relative;
+    width: 88%;
+    height: 88%;
+    background: #262c33;
+    -moz-border-radius: 1000px;
+    -webkit-border-radius: 1000px;
+    border-radius: 1000px;
+    z-index: 1000;
+    left: 6%;
+    /* center DIV horizontally (100%-88% / 2) */
+    top: 6%
+    /* center DIV vertically (100%-88% / 2) */
+}
+
+.inner-clock::before {
+    /* clock center dot small */
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    margin-left: -9px;
+    margin-top: -9px;
+    background: #fd4a36;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.inner-clock::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    font: normal 0.8em Arial;
+    color: gray;
+    text-align: center;
+    top: 85%
+}
+
+.clock-hand,
+.clock-hand.hour {
+    position: absolute;
+    width: 4px;
+    /* default width of hands/ hour hand */
+    height: 30%;
+    /* default height of hands/ hour hand */
+    top: 20%;
+    /* offset hand vertically by 20% so its bottom is at center of clock */
+    left: 50%;
+    /* offset hand horiz by 50% so its left is at center of clock */
+    margin-left: -2px;
+    /* Account for hand width to center hand horizonally */
+    background: #ffffff;
+    transform: rotate(0deg);
+    -moz-transform-origin: bottom;
+    /* Set transform origin to center bottom */
+    -ms-transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    z-index: -1;
+}
+
+.clock-hand.minute {
+    /* minute hand (2nd longest) */
+    height: 50%;
+    /* top: 2%; */
+    top: 1px;
+    width: 6px;
+    margin-left: -3px;
+}
+
+.clock-hand.second {
+    /* second hand (longest) */
+    height: 50%;
+    width: 2px;
+    margin-left: -1px;
+    top: 0;
+    background: #fd4a36;
+    position: relative;
+}
+
+.clock-hand.second::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 2px;
+    background: #f84935;
+    top: 25px;
+}
+
+.weather-wrapper {
+    padding-left: 30px;
+}
+
+.weather-wrapper,
+.clock-main {
+    margin: 0 auto;
+}
+
+.month,
+.dayNum {
+    font-size: 54px;
+    color: #08104d;
+    font-weight: 700;
+}
+
+.dayNum {
+    margin-left: 20px;
+}
+
+.dayName {
+    margin-left: 20px;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ff4b36;
+}
+
+.cityName {
+    font-size: 24px;
+    padding-top: 20px;
+    color: #08104d;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.temperature {
+    margin-top: 20px;
+    position: relative;
+}
+
+.weatherIcon {
+    float: left;
+}
+
+.weatherIcon img {
+    height: 100px;
+}
+
+.temperature-info {
+    padding-top: 10px;
+}
+
+.temperature span {
+    font-size: 80px;
+    font-weight: 900;
+    color: #ff4b36;
+}
+
+.temp {
+    margin-left: 20px;
+}
+
+.degree {
+    margin-left: 30px;
+}
+
+.weather-description h1 {
+    font-size: 54px;
+    text-transform: capitalize;
+    margin-top: 20px;
+    color: #08104d;
+    font-weight: 900;
+}
+
+
+/* media query for responsive  starts here  */
+
+@media only screen and (max-width: 600px) {
+    .site-main {
+        padding-top: 10px;
+    }
+    .site-wrapper {
+        padding: 0px;
+    }
+    .clock-wrapper {
+        width: 100%;
+        border: none;
+    }
+    .clock-inner {
+        margin: 0 auto;
+    }
+    .inner-wrapper {
+        display: block;
+        margin: 0;
+        padding: 0px;
+        border-radius: 0px;
+    }
+    .heading {
+        text-align: center;
+    }
+    .weather-wrapper {
+        padding: 40px;
+        text-align: center;
+    }
+    .cityName {
+        padding-top: 10px;
+    }
+    .dayName,
+    .cityName,
+    .month,
+    .dayNum {
+        font-size: 45px;
+        padding-top: 10px;
+    }
+    .weather-description h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .temperature-info {
+        padding-top: 25px;
+    }
+    .weatherIcon {
+        margin-top: 30px;
+        float: none;
+    }
+    .weatherIcon img {
+        height: 80px;
+    }
+    .temperature span {
+        font-size: 42px;
+        padding-top: 40px;
+    }
+}
+
+@media (min-width: 601px) and (max-width:1025px) {
+    .inner-wrapper {
+        margin: 30px;
+        display: block;
+        padding-left: 0px;
+    }
+    .clock-wrapper {
+        padding: 0px;
+        border: none;
+    }
+    .heading {
+        margin-top: 30px;
+    }
+    .weather-wrapper {
+        width: 100%;
+        /* padding: 40px; */
+        text-align: center;
+    }
+    .weatherIcon {
+        margin-top: 30px;
+        float: none;
+    }
+    .dayName,
+    .cityName,
+    .month,
+    .dayNum {
+        font-size: 45px;
+        padding-top: 10px;
+    }
+}
